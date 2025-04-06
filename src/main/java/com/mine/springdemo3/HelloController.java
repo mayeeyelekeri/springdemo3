@@ -7,16 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	@Value("${springboot.message:def_value}")
-	String message; 
+	@Value("${WELCOME_MESSAGE:def_value}")
+	String welcomeMessage; 
 	
-	@Value("${springboot.ipAddress:0.0.0.0}")
-	String ipAddress; 
-	
-	@GetMapping("/")
+	@GetMapping("/greeting")
 	public String index() {
-		System.out.println("IP Address is " + ipAddress); 
-		return "Greetings from Spring Boot! , message is : " + message;
+		return "Greetings from Spring Boot! , message is : " + welcomeMessage;
 	}
 
 }
