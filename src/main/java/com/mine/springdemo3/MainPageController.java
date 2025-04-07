@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class MainPageController {
 	
-	@Value("${IP_ADDRESS:0.0.0.0}")
+	@Value("${IP_ADDRESS:default - 0.0.0.0}")
 	String ipAddress; 
 	
 	@GetMapping("/")
